@@ -6,6 +6,7 @@ require 'random_data'
     body: RandomData.random_paragraph
   )
 end
+Post.find_or_create_by!(title: "Not Random Post", body: "This is definitely an unique post. Ken ding shi bu yi yang")
 posts = Post.all
 
 # Create comments
