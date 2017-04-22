@@ -1,11 +1,17 @@
 require 'random_data'
-# Create Posts
+# Create Posts and advertisements
 50.times do
   Post.create!(
     title: RandomData.random_sentence,
     body: RandomData.random_paragraph
   )
+  Advertisement.create!(
+    title: RandomData.random_sentence,
+    body: RandomData.random_paragraph,
+    price: 100
+  )
 end
+
 posts = Post.all
 
 # Create comments
