@@ -20,7 +20,28 @@
 </div>
 
 <h2>Posts</h2>
-<%= render @user.posts %>
-
+<% if user_has_posts?(@user) %>
+  <%= render @user.posts %>
+<% else %>
+  <p> <%= @user.name %> has not submitted any posts yet.</p>
+<% end %>
 <h2>Comments</h2>
-<%= render @user.comments %>
+<% if user_has_comments?(@user) %>
+  <%= render @user.comments %>
+<% else %>
+  <p> <%= @user.name %> has not submitted any comments yet.</p>
+<% end %>
+<h2>Favorites</h2>
+<% @user.favorites.each do |favorite| %>
+  <div class="media">
+    <div class="media-left">
+      <%= image_tag favorite.post.user.avatar_url(48), class: "gravatar" %>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"> <%= link_to favorite.post.title, topic_post_path(favorite.post.topic, favorite.post) %> </h4>
+      <small>
+      <%= favorite.post.votes.count %> Votes, <%= favorite.post.comments.count %> Comments
+      </small>
+    </div>
+  </div>
+<% end %>
