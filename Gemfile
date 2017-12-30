@@ -32,6 +32,8 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
+gem 'nokogiri', '~> 1.8', '>= 1.8.1'
+
 gem 'bootstrap-sass'
 
 # Used for encrypting User passwords
