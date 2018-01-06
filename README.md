@@ -23,7 +23,7 @@ Discussit can be downloaded and installed or edited easily.
 
 ### Prerequisites
 
-This project uses `Rails 4.2.8`.
+This project was built with `Ruby 2.4` and `Rails 4.2.8`.
 
 ### Installing
 
